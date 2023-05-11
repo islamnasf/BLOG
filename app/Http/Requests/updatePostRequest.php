@@ -24,18 +24,18 @@ class updatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|alpha',
-            'image' => 'required|image|max:2048|mimes:jpeg,png,jpg,webp', // only 2MB is max-size allowed
-            'author'=>'required|alpha',
-            'content'=>'required|string|min:20|max:255',
+            //'title'=>'required|alpha',
+            //'image' => 'required|image|max:2048|mimes:jpeg,png,jpg,webp', // only 2MB is max-size allowed
+            //'author'=>'required|alpha',
+            //'content'=>'required|string|min:20|max:255',
 
         ];
     }
     public function message()
     {
         return [
-            'title.required'=>'the title is required.',
-            'title.alpha'=>'the title may only contain letters.',
+           // 'title.required'=>'the title is required.',
+           // 'title.alpha'=>'the title may only contain letters.',
         ];
     }
 }

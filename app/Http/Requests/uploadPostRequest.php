@@ -25,7 +25,7 @@ class uploadPostRequest extends FormRequest
     {
         return [
            // 'title'=>'required|alpha|unique:posts,title',
-           // 'image' => 'required|image|mimes:jpeg,png,jpg,webp', // only 2MB is allowed
+            //'image' => 'required|image|max:2048|mimes:jpeg,png,jpg,webp', // only 2MB is max-size allowed
            // 'author'=>'required|alpha',
            // 'content'=>'required|string|min:20|max:255',
         ];

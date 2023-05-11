@@ -52,10 +52,17 @@ class adminController extends Controller
 
 
         ///////image code (vip)/////
-        $image=$request->image;
+       /* $image=$request->image;
         $imagename=time().'.'.$image->getClientOriginalExtension();
            $request->image->move('postimage',$imagename);
-        $data->image=$imagename;
+        $data->image=$imagename;*/
+        if($request->has('image')){
+            $image=$request->image;
+            $extension=strtolower($image->extension());
+            $imagename=time().rand(1,1000).".".$extension;
+            $image->move('postimage',$imagename);
+            $data->image=$imagename;
+        }
         //////////////////////////////
         $data->title=$request->title;
         $data->author=$request->author;
@@ -77,11 +84,17 @@ class adminController extends Controller
      public function updatepostdata(updatePostRequest $request ,$id ){
         $data=Post::find($id);
         ///////image code (vip)/////
-        $image=$request->image;
+       /* $image=$request->image;
         $imagename=time().'.'.$image->getClientOriginalExtension();
-        $imagesize = $image->getMaxFileSize() / 2 / 2;  // Get size in Mb
            $request->image->move('postimage',$imagename);
-        $data->image=$imagename;
+        $data->image=$imagename;*/
+        if($request->has('image')){
+            $image=$request->image;
+            $extension=strtolower($image->extension());
+            $imagename=time().rand(1,1000).".".$extension;
+            $image->move('postimage',$imagename);
+            $data->image=$imagename;
+        }
         //////////////////////////////
         $data->title=$request->title;
         $data->author=$request->author;
